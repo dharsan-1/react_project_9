@@ -5,7 +5,7 @@ class ShowHide extends Component {
   state = {FirstName: true, lastName: true}
 
   onFirstWord = () => {
-    this.setState(prevState => ({firstName: !prevState.firstName}))
+    this.setState(prevState => ({FirstName: !prevState.FirstName}))
   }
 
   onSecondWord = () => {
@@ -14,8 +14,10 @@ class ShowHide extends Component {
 
   render() {
     const {FirstName, lastName} = this.state
-    const firstContainer = FirstName ? 'dharsan' : null
-    const secondContainer = lastName ? 'ramakrishnan' : null
+    const firstContainer = FirstName ? 'firstNameContainer' : null
+    const secondContainer = lastName ? 'secondNameContainer' : null
+    const NameshowHide1 = FirstName ? 'dharsan' : null
+    const nameShowHide2 = lastName ? 'ramakrishnan' : null
 
     return (
       <div className="background">
@@ -23,15 +25,15 @@ class ShowHide extends Component {
         <button type="button" className="bu" onClick={this.onFirstWord}>
           show/hide first name
         </button>
-        <div className="firstNameContainer">
-          <h1>{firstContainer}</h1>
+        <div className={firstContainer}>
+          <h1>{NameshowHide1}</h1>
         </div>
         <h1>show/hide second name</h1>
         <button type="button" className="bu" onClick={this.onSecondWord}>
           show/hide second name
         </button>
-        <div className="secondNameContainer">
-          <h1>{secondContainer}</h1>
+        <div className={secondContainer}>
+          <h1>{nameShowHide2}</h1>
         </div>
       </div>
     )
